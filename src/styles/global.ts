@@ -2,21 +2,21 @@ import { createGlobalStyle } from 'styled-components';
 
 // eslint-disable-next-line no-shadow
 export enum ColorPallete {
-  PRIMARY_LIGHT = '#9ab1c8',
-  PRIMARY_LIGHT_ALT = '#9bb2ca',
-  PRIMARY_DARK = '#09416c',
-  PRIMARY_BLANK = '#e6e7e7',
-  NEUTRAL_DARK = '#18191d',
-  NEUTRAL_BLANK = '#fcfcfc',
-  NEUTRAL_LIGHTER = '#808080',
-  NEUTRAL_LIGHTER_ALT = '#d6d4d4',
-  NEUTRAL_DARKER = '#1d2024',
-  NEUTRAL_DARKER_ALT = '#2a2b31',
-  SYSTEM_RED = '#c11e0f',
-  SYSTEM_ORANGE = '#f2921b',
-  SYSTEM_BLUE = '#4a90e2',
-  SYSTEM_PURPLE = '#494aa7',
-  SYSTEM_GREEN = '#75b831',
+  PRIMARY_1 = '#9ab1c8',
+  PRIMARY_2 = '#09416c',
+  PRIMARY_3 = '#e6e7e7',
+  PRIMARY_4 = '#9bb2ca',
+  NEUTRAL_1 = '#18191d',
+  NEUTRAL_2 = '#fcfcfc',
+  NEUTRAL_3 = '#808080',
+  NEUTRAL_4 = '#d6d4d4',
+  NEUTRAL_5 = '#1d2024',
+  NEUTRAL_6 = '#2a2b31',
+  SYSTEM_1 = '#c11e0f',
+  SYSTEM_2 = '#f2921b',
+  SYSTEM_3 = '#4a90e2',
+  SYSTEM_4 = '#494aa7',
+  SYSTEM_5 = '#75b831',
 }
 
 export function applyAlpha(color: ColorPallete, alpha: number): string {
@@ -25,21 +25,21 @@ export function applyAlpha(color: ColorPallete, alpha: number): string {
 
 export default createGlobalStyle`
   :root {
-    --color-primary-light: ${ColorPallete.PRIMARY_LIGHT};
-    --color-primary-light-alt: ${ColorPallete.PRIMARY_LIGHT_ALT};
-    --color-primary-dark: ${ColorPallete.PRIMARY_DARK};
-    --color-primary-blank: ${ColorPallete.PRIMARY_BLANK};
-    --color-neutral-dark: ${ColorPallete.NEUTRAL_DARK};
-    --color-neutral-blank: ${ColorPallete.NEUTRAL_BLANK};
-    --color-neutral-lighter: ${ColorPallete.NEUTRAL_LIGHTER};
-    --color-neutral-lighter-alt: ${ColorPallete.NEUTRAL_LIGHTER_ALT};
-    --color-neutral-darker: ${ColorPallete.NEUTRAL_DARKER};
-    --color-neutral-darker-alt: ${ColorPallete.NEUTRAL_DARKER_ALT};
-    --color-system-red: ${ColorPallete.SYSTEM_RED};
-    --color-system-orange: ${ColorPallete.SYSTEM_ORANGE};
-    --color-system-blue: ${ColorPallete.SYSTEM_BLUE};
-    --color-system-purple: ${ColorPallete.SYSTEM_PURPLE};
-    --color-system-green: ${ColorPallete.SYSTEM_GREEN};
+    --color-primary-1: ${ColorPallete.PRIMARY_1};
+    --color-primary-2: ${ColorPallete.PRIMARY_2};
+    --color-primary-3: ${ColorPallete.PRIMARY_3};
+    --color-primary-4: ${ColorPallete.PRIMARY_4};
+    --color-neutral-1: ${ColorPallete.NEUTRAL_1};
+    --color-neutral-2: ${ColorPallete.NEUTRAL_2};
+    --color-neutral-3: ${ColorPallete.NEUTRAL_3};
+    --color-neutral-4: ${ColorPallete.NEUTRAL_4};
+    --color-neutral-5: ${ColorPallete.NEUTRAL_5};
+    --color-neutral-6: ${ColorPallete.NEUTRAL_6};
+    --color-system-1: ${ColorPallete.SYSTEM_1};
+    --color-system-2: ${ColorPallete.SYSTEM_2};
+    --color-system-3: ${ColorPallete.SYSTEM_3};
+    --color-system-4: ${ColorPallete.SYSTEM_4};
+    --color-system-5: ${ColorPallete.SYSTEM_5};
   }
 
   * {
@@ -50,7 +50,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background: var(--color-neutral-dark);
+    background: var(--color-neutral-1);
     color: #fff;
     -webkit-font-smoothing: antialiased;
   }
@@ -75,8 +75,19 @@ export default createGlobalStyle`
     user-select: none;
   }
 
-  ::-webkit-scrollbar{}
-  ::-webkit-scrollbar-track {}
-  ::-webkit-scrollbar-thumb {}
-  ::-webkit-scrollbar-corner {}
+  ::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    border-radius: 50px;
+    background-color: var(--color-neutral-3);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background-color: var(--color-system-3)
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: var(--color-neutral-1);
+  }
 `;

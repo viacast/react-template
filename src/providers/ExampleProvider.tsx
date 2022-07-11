@@ -1,12 +1,14 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 import { WithChildren } from 'utils';
 
-interface ProviderData {
+interface ProviderContextData {
   state: string;
   setState: (arg: string) => void;
 }
 
-const ProviderContext = createContext<ProviderData>({} as ProviderData);
+const ProviderContext = createContext<ProviderContextData>(
+  {} as ProviderContextData,
+);
 
 const ExampleProvider: React.FC<WithChildren> = ({ children }) => {
   const [state, setState] = useState('');
@@ -20,7 +22,7 @@ const ExampleProvider: React.FC<WithChildren> = ({ children }) => {
   );
 };
 
-const useExampleProvider = (): ProviderData => {
+const useExampleProvider = (): ProviderContextData => {
   return useContext(ProviderContext);
 };
 
